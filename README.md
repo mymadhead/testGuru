@@ -1,24 +1,41 @@
-# README
+# Application Test Guru. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Exercise by THINKNETICA school. Basic Ruby on Rails course.
 
-Things you may want to cover:
+All you need to know is here:
 
-* Ruby version
+* Ruby version\
+2.6.3p62
 
-* System dependencies
+* System dependencies\
+IN PREPARATION
 
-* Configuration
+* Configuration\
+IN PREPARATION
 
-* Database creation
+* Database creation\
+IN PREPARATION
 
-* Database initialization
+* Database initialization\
+IN PREPARATION
 
-* How to run the test suite
+* How to run the test suite\
+IN PREPARATION
 
-* Services (job queues, cache servers, search engines, etc.)
+* Services (job queues, cache servers, search engines, etc.)\
+IN PREPARATION
 
-* Deployment instructions
+* Deployment instructions\
+IN PREPARATION
 
-* ...
+* Modules in application:\
+1.User(name, email, password, etc)\
+2.Test(name, category, questions)\
+3.Test process(user_id, test_id, result, test_time, etc)\
+4.Questions(name, body, answers, etc)\
+5.Answers(name, body, correct_answer, question_id, etc)\
+6.Admin panel(auth, interface, etc)
+
+
+This file will be updated as development. 
+
