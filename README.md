@@ -8,7 +8,7 @@ All you need to know is here:
 2.6.3p62
 
 * System dependencies\
-IN PREPARATION
+This Application use Semantic Versioning 2.0.0 https://semver.org
 
 * Configuration\
 IN PREPARATION
