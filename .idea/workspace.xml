@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17213a5f-936d-49e9-b91e-ba3654187242" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.browserslistrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/javascript/packs/hello_react.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/webpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/webpack-dev-server" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/webpack/development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/webpack/environment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/webpack/production.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/webpack/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +25,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1bOxxotxnHvuPrJkxirZ7ML5rVL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -29,22 +48,16 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.settings.patched" value="true" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RubyModuleManagerSettings">
-    <option name="blackListedRootsPaths">
-      <list>
-        <option value="$PROJECT_DIR$/../untitled" />
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Rails.Development: untitled">
+  <component name="RunManager" selected="Rails.Development: testGuru">
     <configuration default="true" type="RackRunConfigurationType" factoryName="Rack">
       <RACK_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
       <RACK_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
@@ -65,13 +78,13 @@
       <RACK_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Development: untitled" type="RailsRunConfigurationType" factoryName="Rails">
-      <module name="untitled" />
+    <configuration name="Development: testGuru" type="RailsRunConfigurationType" factoryName="Rails">
+      <module name="testGuru" />
       <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="ruby-2.6.3-p62" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
@@ -80,17 +93,19 @@
           <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
         </COVERAGE_PATTERN>
       </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="0.0.0.0" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="DUMMY_APP" VALUE="test/dummy" />
-      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="default" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="development" />
-      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="BROWSER_URL" VALUE="http://0.0.0.0:3000" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="true" />
       <method v="2" />
     </configuration>
-    <configuration name="Production: untitled" type="RailsRunConfigurationType" factoryName="Rails">
-      <module name="untitled" />
+    <configuration name="Production: testGuru" type="RailsRunConfigurationType" factoryName="Rails">
+      <module name="testGuru" />
       <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
@@ -104,19 +119,20 @@
           <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
         </COVERAGE_PATTERN>
       </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="0.0.0.0" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="DUMMY_APP" VALUE="test/dummy" />
-      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="default" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="production" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
       <method v="2" />
     </configuration>
-    <configuration name="spec: untitled" type="RakeRunConfigurationType" factoryName="Rake">
-      <module name="untitled" />
+    <configuration name="spec: testGuru" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="testGuru" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/../untitled" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
@@ -127,6 +143,7 @@
           <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
         </COVERAGE_PATTERN>
       </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="spec" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":rspec " />
@@ -136,10 +153,10 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
       <method v="2" />
     </configuration>
-    <configuration name="test: untitled" type="RakeRunConfigurationType" factoryName="Rake">
-      <module name="untitled" />
+    <configuration name="test: testGuru" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="testGuru" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/../untitled" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
@@ -153,6 +170,7 @@
           <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
         </COVERAGE_PATTERN>
       </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="test" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":test_unit " />
@@ -162,6 +180,12 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Rails.Development: testGuru" />
+      <item itemvalue="Rails.Production: testGuru" />
+      <item itemvalue="Rake.spec: testGuru" />
+      <item itemvalue="Rake.test: testGuru" />
+    </list>
   </component>
   <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
   <component name="TaskManager">
@@ -172,7 +196,15 @@
       <option name="presentableId" value="Default" />
       <updated>1588517189159</updated>
       <workItem from="1588517190334" duration="197000" />
-      <workItem from="1588517390797" duration="2947000" />
+      <workItem from="1588517390797" duration="3618000" />
+      <workItem from="1588521118262" duration="257000" />
+      <workItem from="1588521400137" duration="372000" />
+      <workItem from="1588521995481" duration="7000" />
+      <workItem from="1588530492724" duration="15000" />
+      <workItem from="1588530579406" duration="706000" />
+      <workItem from="1588531686175" duration="244000" />
+      <workItem from="1588532104998" duration="1220000" />
+      <workItem from="1588534620385" duration="232000" />
     </task>
     <servers />
   </component>
@@ -180,29 +212,45 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="360" y="194" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588532559057">
+      <screen x="0" y="23" width="1792" height="1019" />
+    </state>
+    <state x="360" y="194" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1019@0.23.1792.1019" timestamp="1588532559057" />
     <state x="627" y="332" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588518409365">
       <screen x="0" y="23" width="1792" height="1019" />
     </state>
     <state x="627" y="332" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1792.1019@0.23.1792.1019" timestamp="1588518409365" />
-    <state width="1750" height="272" key="GridCell.Tab.0.bottom" timestamp="1588517387224">
+    <state x="748" y="177" key="EnvironmentVariablesDialog" timestamp="1588530883795">
       <screen x="0" y="23" width="1792" height="1019" />
     </state>
-    <state width="1750" height="272" key="GridCell.Tab.0.bottom/0.23.1792.1019@0.23.1792.1019" timestamp="1588517387224" />
-    <state width="1750" height="272" key="GridCell.Tab.0.center" timestamp="1588517387223">
+    <state x="748" y="177" key="EnvironmentVariablesDialog/0.23.1792.1019@0.23.1792.1019" timestamp="1588530883795" />
+    <state width="1750" height="272" key="GridCell.Tab.0.bottom" timestamp="1588532258990">
       <screen x="0" y="23" width="1792" height="1019" />
     </state>
-    <state width="1750" height="272" key="GridCell.Tab.0.center/0.23.1792.1019@0.23.1792.1019" timestamp="1588517387223" />
-    <state width="1750" height="272" key="GridCell.Tab.0.left" timestamp="1588517387223">
+    <state width="1750" height="272" key="GridCell.Tab.0.bottom/0.23.1792.1019@0.23.1792.1019" timestamp="1588532258990" />
+    <state width="1750" height="272" key="GridCell.Tab.0.center" timestamp="1588532258989">
       <screen x="0" y="23" width="1792" height="1019" />
     </state>
-    <state width="1750" height="272" key="GridCell.Tab.0.left/0.23.1792.1019@0.23.1792.1019" timestamp="1588517387223" />
-    <state width="1750" height="272" key="GridCell.Tab.0.right" timestamp="1588517387224">
+    <state width="1750" height="272" key="GridCell.Tab.0.center/0.23.1792.1019@0.23.1792.1019" timestamp="1588532258989" />
+    <state width="1750" height="272" key="GridCell.Tab.0.left" timestamp="1588532258989">
       <screen x="0" y="23" width="1792" height="1019" />
     </state>
-    <state width="1750" height="272" key="GridCell.Tab.0.right/0.23.1792.1019@0.23.1792.1019" timestamp="1588517387224" />
-    <state x="397" y="171" key="SettingsEditor" timestamp="1588518258634">
+    <state width="1750" height="272" key="GridCell.Tab.0.left/0.23.1792.1019@0.23.1792.1019" timestamp="1588532258989" />
+    <state width="1750" height="272" key="GridCell.Tab.0.right" timestamp="1588532258990">
       <screen x="0" y="23" width="1792" height="1019" />
     </state>
-    <state x="397" y="171" key="SettingsEditor/0.23.1792.1019@0.23.1792.1019" timestamp="1588518258634" />
+    <state width="1750" height="272" key="GridCell.Tab.0.right/0.23.1792.1019@0.23.1792.1019" timestamp="1588532258990" />
+    <state x="397" y="171" key="SettingsEditor" timestamp="1588532839094">
+      <screen x="0" y="23" width="1792" height="1019" />
+    </state>
+    <state x="397" y="171" key="SettingsEditor/0.23.1792.1019@0.23.1792.1019" timestamp="1588532839094" />
+    <state x="561" y="246" key="run.anything.popup" timestamp="1588521868820">
+      <screen x="0" y="23" width="1792" height="1019" />
+    </state>
+    <state x="561" y="246" key="run.anything.popup/0.23.1792.1019@0.23.1792.1019" timestamp="1588521868820" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/testGuru@test__testGuru.rcov" NAME="test: testGuru Coverage Results" MODIFIED="1588532254188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="testGuru" />
+    <SUITE FILE_PATH="coverage/testGuru@spec__testGuru.rcov" NAME="spec: testGuru Coverage Results" MODIFIED="1588532201620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="testGuru" />
   </component>
 </project>
