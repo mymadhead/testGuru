@@ -162,6 +162,12 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Rails.Development: untitled" />
+      <item itemvalue="Rails.Production: untitled" />
+      <item itemvalue="Rake.spec: untitled" />
+      <item itemvalue="Rake.test: untitled" />
+    </list>
   </component>
   <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
   <component name="TaskManager">
@@ -204,5 +210,9 @@
       <screen x="0" y="23" width="1792" height="1019" />
     </state>
     <state x="397" y="171" key="SettingsEditor/0.23.1792.1019@0.23.1792.1019" timestamp="1588518258634" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/testGuru@test__testGuru.rcov" NAME="test: testGuru Coverage Results" MODIFIED="1588532254188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="testGuru" />
+    <SUITE FILE_PATH="coverage/testGuru@spec__testGuru.rcov" NAME="spec: testGuru Coverage Results" MODIFIED="1588532201620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="testGuru" />
   </component>
 </project>

@@ -29,12 +29,12 @@ IN PREPARATION
 IN PREPARATION
 
 * Modules in application:\
-1.User(name, email, password, etc)\
+1.User(name, email, password, admin)\
 2.Test(name, category, questions)\
-3.Test process(user_id, test_id, result, test_time, etc)\
+3.Test process(user_id, test_id, result, test_time)\
 4.Questions(name, body, answers, etc)\
-5.Answers(name, body, correct_answer, question_id, etc)\
-6.Admin panel(auth, interface, etc)
+5.Answers(name, body, correct_answer, question_id, result)\
+
 
 
 This file will be updated as development. 
