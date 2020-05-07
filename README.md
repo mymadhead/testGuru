@@ -33,7 +33,7 @@ IN PREPARATION
 2.Test(name, category, questions)\
 3.Test process(user_id, test_id, result, test_time)\
 4.Questions(name, body, answers, etc)\
-5.Answers(name, body, correct_answer, question_id, result)\
+5.Answers(name, body, correct_answer, question_id, result)
 
 
 
