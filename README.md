@@ -30,12 +30,10 @@ IN PREPARATION
 
 * Modules in application:\
 1.User(name, email, password, admin)\
-2.Test(name, category, questions)\
-3.Test process(user_id, test_id, result, test_time)\
-4.Questions(name, body, answers, etc)\
-5.Answers(name, body, correct_answer, question_id, result)
-
-
+2.Test(name, category, question)\
+3.Questions(name, body, answer)\
+4.Answers(name, body, correct_answer, question_id)\
+5.TestProcess(user_id, test_id, result)
 
 This file will be updated as development. 
 
