@@ -1,2 +1,0 @@
-class CreateTestsUser < ApplicationRecord
-end
