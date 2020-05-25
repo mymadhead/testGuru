@@ -5,7 +5,7 @@ class Test < ApplicationRecord
 
   def self.array_name_tests(category)
     joins('JOIN categories ON categories.id = tests.category_id')
-      .where('categories.name = ?', category)
+      .where(categories: { name: category })
       .order(title: :desc).pluck(:title)
   end
 end
