@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_25_162158) do
+ActiveRecord::Schema.define(version: 2020_05_27_094632) do
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2020_05_25_162158) do
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "email", default: "", null: false
   end
 
   add_foreign_key "answers", "questions"
