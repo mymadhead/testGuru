@@ -7,7 +7,7 @@ class TestsController < ApplicationController
   end
 
   def show
-    render 'show'
+    @test = Test.find(params[:id])
   end
 
   private
