@@ -1,2 +1,12 @@
 <h1>Tests#show</h1>
-<p>Find me in app/views/tests/show.html.erb</p>
+<ul>
+  <% @test.questions.each do |question| %>
+    <li>
+      <%= question.body %>
+      <%= link_to 'Check', question %>
+      <%= link_to 'Delete', question, method: :delete %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'New question:', new_test_question_path(@test) %>
