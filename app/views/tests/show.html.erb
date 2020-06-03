@@ -10,14 +10,13 @@
 </p>
 
 <ul>
-  <% @test.questions.each do |question| %>
+  <% render @test.questions %>
     <li>
       <%= question.body %>
       <%= link_to 'Check', question %>
       <%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' } %>
       <%= link_to 'Edit', edit_question_path(question) %>
     </li>
-  <% end %>
 </ul>
 
 <%= link_to 'New question', new_test_question_path(@test) %><br />
