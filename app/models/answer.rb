@@ -7,6 +7,6 @@ class Answer < ApplicationRecord
   private
 
   def max_answers
-    errors.add(question, 'У вопроса не может быть больше 4-х ответов!') if question.answers.count >= 4
+    errors.add(question, 'A question cannot have more than 4 answers!') if question.answers.count >= 4
   end
 end
