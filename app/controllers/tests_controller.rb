@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 class TestsController < ApplicationController
-  before_action :set_test, only: %i[show update edit destroy start]
-  before_action :set_user, only: :start
+  before_action :find_test, only: %i[show edit update destroy start]
+  before_action :set_user, only: %i[start]
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
@@ -44,7 +44,7 @@ class TestsController < ApplicationController
 
   private
 
-  def set_test
+  def find_test
     @test = Test.find(params[:id])
   end
 
