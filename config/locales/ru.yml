@@ -1,0 +1,9 @@
+ru:
+  hello: Привет мир
+
+  links:
+    show: Просмотреть
+    edit: Редактировать
+    delete: Удалить
+    message: Вы уверены?
+    back: Назад

@@ -21,9 +21,9 @@
     <%= render @test.questions %>
   </tr>
 </table><br>
-<%= link_to 'Check', question %>
-<%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Edit', edit_question_path(question) %>
+<%= link_to 'Show', question_path %>
+<%= link_to 'Delete', question_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Edit', edit_question_path(question_url) %>
 
 <%= link_to 'New question', new_test_question_path(@test) %><br />
 <%= link_to 'Edit', edit_test_path(@test) %>

@@ -25,6 +25,14 @@ class TestsController < ApplicationController
     end
   end
 
+  def update
+    if @test.update(test_params)
+      redirect_to @test
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @test.destroy
     redirect_to tests_path
