@@ -3,10 +3,12 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_first_question, on: :create
+  before_validation :before_validation_set_current_question
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if correct_answer?(answer_ids)
+    if correct_answer?(answer_ids)
+      self.correct_questions += 1
+    end
     save!
   end
 
@@ -24,6 +26,10 @@ class TestPassage < ApplicationRecord
 
   def question_count
     test.questions.order(:id).where('id <= :current', current: current_question.id).count
+  end
+
+  def current_question_index
+    test.questions.order(:id).index(current_question) + 1
   end
 
   private
