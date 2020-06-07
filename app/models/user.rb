@@ -1,3 +1,5 @@
+require 'digest/sha1'
+
 class User < ApplicationRecord
   has_many :test_passages
   has_many :tests, through: :test_passages
@@ -9,9 +11,7 @@ class User < ApplicationRecord
     test_passages.order(id: :desc).find_by(test: test)
   end
 
-  def authenticate(password_string)
-    digest(password_string) = self.password_digest ? self  : false
-  end
+  private
 
   def list_all_tests(level)
     tests.where(level: level)
