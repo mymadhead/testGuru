@@ -28,10 +28,6 @@ class TestPassage < ApplicationRecord
     test.questions.order(:id).where('id <= :current', current: current_question.id).count
   end
 
-  def current_question_index
-    test.questions.order(:id).index(current_question) + 1
-  end
-
   private
 
   def before_validation_set_current_question

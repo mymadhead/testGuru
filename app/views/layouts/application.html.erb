@@ -10,7 +10,17 @@
   </head>
 
   <body>
-    <%= yield %>
+  <% if logged? %>
+    <p class="nav user">Welcome
+      <b><%= current_user.name %></b> Guru <br>
+      <b><%= link_to 'Home Test Guru', tests_path %></b><br>
+      <b><%= link_to "Exit", exit_path,
+                     method: :delete,
+                     data: { confirm: 'Do you really want to leave?'} %></b>
+    </p>
+  <% end %>
+
+  <%= yield %>
     <%= render "shared/footer" %>
   </body>
 </html>
