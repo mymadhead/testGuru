@@ -1,5 +1,9 @@
 module FlashMessageHelper
-  def flash_alert(alert)
-    content_tag :p, flash[alert], class: 'flash alert' if flash[alert]
+  def display_flash
+  flash.map do |type, message|
+    content_tag :p, class: "flash #{type}" do
+      message
+    end
+  end.join.html_safe
   end
 end

@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   root to: 'tests#index'
 
   get :signup, to: 'users#new'
-
   get :login, to: 'sessions#new'
   delete :exit, to: 'sessions#destroy'
 
