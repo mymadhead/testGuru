@@ -1,27 +1,31 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
-  helper_method :current_user,
-                :logged?,
-                :log_out
+  protect_from_forgery with: :exception
 
-  private
+  before_action :set_locale
 
-  def authenticate_user!
-    unless current_user
-      cookies[:redirect_path] = request.path if request.get?
-      redirect_to login_path, alert: 'Please, verify your e-mail and password!'
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  def default_url_options
+    I18n.default_locale == I18n.locale ? {} : { lang: I18n.locale }
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[last_name first_name])
+  end
+
+  def after_sign_in_path_for(user)
+    if user.admin?
+      admin_tests_path
+    else
+      root_path
     end
   end
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-  end
-
-  def logged?
-    current_user.present?
-  end
-
-  def log_out
-    session.delete(:user_id)
-    @current_user = nil
+  def set_locale
+    I18n.locale = I18n.locale_available?(params[:lang]) ? params[:lang] : I18n.default_locale
   end
 end

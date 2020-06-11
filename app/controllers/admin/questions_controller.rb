@@ -1,27 +1,10 @@
-class QuestionsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :find_test, only: %i[new create]
+# frozen_string_literal: true
+
+class Admin::QuestionsController < Admin::BaseController
+  before_action :find_test, only: %i[index new create]
   before_action :find_question, only: %i[update edit show destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
-
-  def index
-    @questions = @test.questions.all
-  end
-
-  def new
-    @question = Question.new
-  end
-
-  def edit; end
-
-  def update
-    if @question.update(post_params)
-      redirect_to @question
-    else
-      render :edit
-    end
-  end
 
   def show
     @question.body
@@ -30,16 +13,30 @@ class QuestionsController < ApplicationController
   def create
     @question = @test.questions.new(post_params)
     if @question.save
-      redirect_to @question
+      redirect_to admin_question_path(@question), notice: t('.success')
     else
       render :new
+    end
+  end
+
+  def new
+    @question = @test.questions.new
+  end
+
+  def edit; end
+
+  def update
+    if @question.update(post_params)
+      redirect_to admin_question_path(@question), notice: t('.success')
+    else
+      render :edit
     end
   end
 
   def destroy
     @test = @question.test
     @question.destroy
-    redirect_to @question.test
+    redirect_to admin_test_path(@test), notice: t('.success')
   end
 
   private
