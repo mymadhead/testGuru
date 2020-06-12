@@ -1,9 +1,8 @@
 
 <%= form_with model: [:admin, @question, @answer], local: true do |form| %>
-  <% render 'shared/errors', resource: @answer %>
-
+  <%= render 'shared/errors', resource: @answer %>
   <p>
-    <%= form.label :body %><br>
+    <%= form.label :body %>
     <%= form.text_area :body, id: :answer_body, rows: 7, cols: 60 %>
   </p>
 

@@ -1,22 +1,17 @@
-<h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
-<h2><%= t('.header_2', size: @test_passage.test.questions.size) %></h2><br>
-
-<b>
-  <%= t('.total', total: @test_passage.test.questions.index(@test_passage.current_question) + 1) %>
-</b>
+<h1>Passing the <%= @test_passage.test.title %> test</h1>
 
 <b>
   <%= @test_passage.current_question.body %>
 </b>
+<p> Question <%= @test_passage.question_count%> of <%=@test_passage.test.questions.count %></p>
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
     <p>
-      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+      <%= b.check_box id: "answer_ids_#{self.object_id}" %>
       <%= b.label %>
     </p>
   <% end %>
-
-  <p><%= form.submit t('.next') %></p>
+  <%= form.submit 'Next' %>
 <% end %>

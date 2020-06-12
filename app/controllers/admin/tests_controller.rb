@@ -1,15 +1,15 @@
 # frozen_string_literal: true
-class TestsController < ApplicationController
-  before_action :authenticate_user!
+
+class Admin::TestsController < Admin::BaseController
   before_action :find_test, only: %i[show edit update destroy start]
-  before_action :set_user, only: %i[start]
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
     @tests = Test.all
   end
 
-  def show; end
+  def show
+    @questions = @test.questions
+  end
 
   def edit; end
 
@@ -18,9 +18,10 @@ class TestsController < ApplicationController
   end
 
   def create
-    @test = Test.new(test_params)
+    @test = current_user.author_tests.build(test_params)
+
     if @test.save
-      redirect_to @test
+      redirect_to [:admin, @test], notice: 'Test was successfully created!'
     else
       render :new
     end
@@ -28,20 +29,14 @@ class TestsController < ApplicationController
 
   def update
     if @test.update(test_params)
-      redirect_to @test
+      redirect_to [:admin, @test], notice: 'Test was successfully updated!'
     else
       render :edit
     end
   end
 
   def destroy
-    @test.destroy
-    redirect_to tests_path
-  end
-
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
+    redirect_to admin_tests_path, alert: 'Test was destroyed!' if @test.destroy
   end
 
   private
@@ -50,15 +45,7 @@ class TestsController < ApplicationController
     @test = Test.find(params[:id])
   end
 
-  def set_user
-    @user = User.first
-  end
-
   def test_params
-    params.require(:test).permit(:title, :level, :category_id, :author_id)
-  end
-
-  def rescue_with_test_not_found
-    render plain: 'Test not found!'
+    params.require(:test).permit(:level, :title, :category_id)
   end
 end

@@ -1,19 +1,12 @@
-<h1><%= t('.header', title: @test_passage.test.title) %></h1>
+<h1>Test <%= @test_passage.test.title %> completed!</h1>
 
 <p>
-  <% if @test_passage.passing_result? %>
-    <b><%= t('.good_result') %>:</b>
-    <p style="color:#006400">
-      <%= (@test_passage.correct_questions / @test_passage.test.questions.size.to_f * 100).round %>
-      %
-    </p>
-  <% else %>
-    <b><%= t('.bad_result') %>:</b>
-    <p style="color:#8B0000">
-      <%= (@test_passage.correct_questions / @test_passage.test.questions.size.to_f * 100).round %>
-      %
-    </p>
-  <% end %>
-  </p>
+  <span class="<%= @test_passage.successful? ? 'successfull' : 'unsuccessfull' %>">
+  <%= @test_passage.success_rate %>
+  </span>
+  % of questions were answered correctly.
+</p>
 
-  <p><%= link_to t('.back'), tests_path %></p>
+<p>Result: <%= @test_passage.successful? ? 'successfull' : 'unsuccessfull' %></p>
+
+<%= link_to 'Back', tests_path %>
