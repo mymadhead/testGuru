@@ -1,16 +1,13 @@
-<style type="text/css">
-  BODY { margin-bottom: 50px; }
-  #footer {
-    position: fixed;
-    left: 0; bottom: 0;
-    padding: 10px;
-    background: #808080;
-    color: #fff;
-    width: 100%;
-  }
-</style>
-
-<body>
-<div id="footer">&copy; <%= year %> Author: Ilya Efremov, <%= github_url('mymadhead', 'testGuru') %>
-  <a href="https://thinknetica.com" target="_blank">"Учебный проект в онлайн-школе THINKNETICA"</a></div>
-</body>
+<footer class="page-footer font-small blue fixed-bottom bg-light">
+  <div class="container-fluid text-center ">
+    <div class="row">
+      <div class="col-12">
+        Creation and passing tests project.<br>
+        Created through Ruby on Rails course by <a href="http://thinknetica.com" target="_blank", class="text-dark">THINKNETICA school.</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright text-center">
+    <%= year %>, Ilya Efremov, <%= github_url('mymadhead', 'testGuru') %>
+  </div>
+</footer>

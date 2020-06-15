@@ -31,6 +31,10 @@ gem 'letter_opener'
 # Localization
 gem 'rails-i18n'
 
+#UI
+gem 'bootstrap', '~> 4.0.0.beta'
+gem 'jquery-rails'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
