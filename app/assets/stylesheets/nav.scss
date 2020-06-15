@@ -1,9 +1,26 @@
 .nav.user {
-text-align: right;
+  text-align: left;
 }
 
 .nav.user-email {
   border-bottom: 1px solid #3c85e0;
+}
+
+.login.register {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  width: 200px;
+  border: 2px solid;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.logo {
+  margin-top: 10px;
+  font-size: xx-large;
+  font-weight: bold;
+  display: inline-block;
 }
 
 .nav.nav-admin {
@@ -28,7 +45,7 @@ text-align: right;
   text-decoration: underline;
 }
 
-.nav.nav-admin,
+.nav.nav-admin
 a {
   color: #ffffff;
 }
