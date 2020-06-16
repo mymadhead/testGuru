@@ -31,9 +31,20 @@ gem 'letter_opener'
 # Localization
 gem 'rails-i18n'
 
+
 #UI
 gem 'bootstrap', '~> 4.3.1'
+
 gem 'jquery-rails'
+
+# Networking
+gem 'faraday'
+
+# GitHub REST API
+gem 'octokit', '~> 4.0'
+
+# Store sensitive data
+gem 'dotenv-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
