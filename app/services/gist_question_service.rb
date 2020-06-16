@@ -2,12 +2,12 @@ class GistQuestionService
   def initialize(question, client = default_client)
     @question = question
     @test = @question.test
-    @client = client
+    @client = client || Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
   end
 
   def call
     @client.create_gist(gist_params)
-    Result.new(@client.last_response)
+    @client.last_response
   end
 
   private
