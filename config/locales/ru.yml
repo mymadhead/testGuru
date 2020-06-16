@@ -45,6 +45,14 @@ ru:
       result: "Результат"
       successfull: "успех"
       unsuccessfull: "провал"
+      gist:
+        success: "Гист был успешно сохранен!"
+        fail: "Попытка сохранить гист провалилась!"
+        view: "Просмотр"
+
+  users:
+    sessions:
+      hello: "Привет, %{name}!"
 
   admin:
     tests:

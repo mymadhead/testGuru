@@ -75,6 +75,14 @@ en:
       result: "Result"
       successfull: "successfull"
       unsuccessfull: "unsuccessfull"
+    gist:
+      success: "Gist saved successfully!"
+      fail: "Attempt to save gist failed!"
+      view: "View"
+
+  users:
+    sessions:
+      hello: "Hello, %{name}!"
 
   admin:
     tests:
