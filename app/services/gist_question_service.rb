@@ -7,7 +7,7 @@ class GistQuestionService
 
   def call
     @client.create_gist(gist_params)
-    @client.last_response
+    Result.new(@client.last_response)
   end
 
   private
