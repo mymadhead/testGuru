@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class GistQuestionService
   def initialize(question, client = default_client)
     @question = question
     @test = @question.test
-    @client = client || Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
+    @client = client
   end
 
   def call
@@ -18,7 +20,7 @@ class GistQuestionService
 
   def gist_params
     {
-      description: (I18n.translate('services.gist_question_service.gist_params.description', title: @test.title)),
+      description: I18n.translate('services.gist_question_service.gist_params.description', title: @test.title),
       files: {
         I18n.translate('services.gist_question_service.gist_params.file_name') => {
           content: gist_content
