@@ -31,8 +31,10 @@ gem 'letter_opener'
 # Localization
 gem 'rails-i18n'
 
-# UI
-gem 'bootstrap', '~> 4.0.0.beta'
+
+#UI
+gem 'bootstrap', '~> 4.3.1'
+
 gem 'jquery-rails'
 
 # Networking
