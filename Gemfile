@@ -34,6 +34,7 @@ gem 'rails-i18n'
 # UI
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'
+gem 'octicons_helper'
 
 # Networking
 gem 'faraday'
