@@ -27,6 +27,8 @@ Rails.application.routes.draw do
       resources :questions, shallow: true do
         resources :answers, shallow: true
       end
+
+      patch :update_inline, on: :member
     end
     resources :gists, only: %i[index]
   end
