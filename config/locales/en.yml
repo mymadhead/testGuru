@@ -186,3 +186,5 @@ en:
       email: "Email:"
       feedback: "Feedback:"
       submit: "Send"
+    create:
+      sent: "Your feedback was sent"
