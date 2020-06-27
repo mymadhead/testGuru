@@ -21,6 +21,6 @@
     "bootstrap": "^4.5.0",
     "rails-erb-loader": "^5.5.2",
     "webpack": "^4.43.0",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.11.0"
   }
 }
