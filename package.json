@@ -19,6 +19,7 @@
   "version": "0.1.0",
   "devDependencies": {
     "bootstrap": "^4.5.0",
+    "rails-erb-loader": "^5.5.2",
     "webpack": "^4.43.0",
     "webpack-dev-server": "^3.10.3"
   }
