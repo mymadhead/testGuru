@@ -6,11 +6,11 @@ default: &default
 
 development:
   <<: *default
-  database: development-testguru
+  database: development
 
 test:
   <<: *default
-  database: testdb-testguru
+  database: test
 
 production:
   adapter: postgresql
