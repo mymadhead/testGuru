@@ -5,6 +5,9 @@
     "node": "12.x",
     "npm": "6.x"
   },
+  "scripts": {
+    "start": "webpack-dev-server --hot"
+  },
   "dependencies": {
     "@babel/preset-react": "^7.9.4",
     "@rails/actioncable": "^6.0.0",
