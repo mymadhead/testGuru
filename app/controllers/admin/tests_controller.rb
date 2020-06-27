@@ -37,8 +37,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def destroy
-    flash[:danger] = t('.destroyed')
-    redirect_to admin_tests_path if @test.destroy
+    redirect_to admin_tests_path, alert: 'Test was destroyed!' if @test.destroy
   end
 
   def update_inline
