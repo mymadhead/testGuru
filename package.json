@@ -15,13 +15,13 @@
     "react-dom": "^16.13.1",
     "registration": "^2.0.0",
     "turbolinks": "^5.2.0",
-    "utilities": "^1.0.5"
+    "utilities": "^1.0.5",
+    "webpack": "^4.43.0",
+    "webpack-dev-server": "^3.11.0"
   },
 
   "devDependencies": {
     "bootstrap": "^4.5.0",
-    "rails-erb-loader": "^5.5.2",
-    "webpack": "^4.43.0",
-    "webpack-dev-server": "^3.11.0"
+    "rails-erb-loader": "^5.5.2"
   }
 }
