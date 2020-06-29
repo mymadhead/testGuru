@@ -1,0 +1,12 @@
+<h1><%= t('.header', title: @test_passage.test.title) %></h1>
+
+<p>
+  <span class="<%= @test_passage.successful? ? 'successfull' : 'unsuccessfull' %>">
+  <%= @test_passage.success_rate %>
+  </span>
+  <%= t('.percent_correct') %>
+</p>
+
+<p><%= t('.result') %>: <%= @test_passage.successful? ? t('.successfull') : t('.unsuccessfull') %></p>
+
+<%= link_to t('.back'), tests_path %>

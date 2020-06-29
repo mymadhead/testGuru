@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1><%= t('.header') %></h1>
+      <%= link_to t('.add_test'), new_admin_test_path %> | <%= link_to t('.gists'), admin_gists_path %>
+      <%= render 'shared/errors', resource: @test %>
+    </div>
+    <table class="table table-responsive col-12">
+      <thead>
+      <tr>
+        <th scope="col"><%= t('.title') %></th>
+        <th scope="col" ><%= t('.level') %></th>
+        <th scope="col"><%= t('.category') %></th>
+        <th scope="col"><%= t('.author') %></th>
+        <th scope="col"><%= t('.quest_quantity') %></th>
+        <th scope="col" colspan=3><%= t('.actions') %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <%= render @tests %>
+      </tbody>
+    </table>
+  </div>
+</div>

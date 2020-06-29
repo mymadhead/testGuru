@@ -4,9 +4,14 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("../../.rvm/gems/ruby-2.6.5/gems/turbolinks-source-5.2.0/lib/assets/javascripts/turbolinks").start()
+require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("bootstrap")
+require("utilities/sorting")
+require("utilities/form_inline")
+require("utilities/progress_bar")
+require("registration/password_confirmation")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
