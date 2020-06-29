@@ -11,6 +11,7 @@
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "channels": "^0.0.4",
     "prop-types": "^15.7.2",
+    "rails-erb-loader": "^5.5.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "registration": "^2.0.0",
@@ -19,9 +20,8 @@
     "webpack": "^4.43.0",
     "webpack-dev-server": "^3.11.0"
   },
-
   "devDependencies": {
     "bootstrap": "^4.5.0",
-    "rails-erb-loader": "^5.5.2"
+    "webpack-cli": "^3.3.12"
   }
 }
