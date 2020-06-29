@@ -23,6 +23,7 @@
     "bootstrap": "^4.5.0",
     "channels": "^0.0.4",
     "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
     "prop-types": "^15.7.2",
     "rails-erb-loader": "^5.5.2",
     "react": "^16.13.1",
