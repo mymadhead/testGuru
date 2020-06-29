@@ -11,4 +11,5 @@ environment.plugins.append('Provide',
 )
 
 environment.loaders.prepend('erb', erb)
+
 module.exports = environment
