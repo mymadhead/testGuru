@@ -1,14 +1,9 @@
 class FeedbacksMailer < ApplicationMailer
+  include ActionView::Helpers::TextHelper
+  def send_feedback(params)
+    @email = params[:email]
+    @feedback = params[:feedback]
 
-  def send_feedback(feedback)
-    @email = feedback.email
-    @message = feedback.message
-    @subject = feedback.subject
-
-    mail from: @email,
-         cc: @email,
-         to:  Rails.application.credentials.default_email,
-         subject: @subject,
-         body: @message
+    mail to: 'mymadhead@yandex.ru', subject: truncate(@feedback, length: 15, escape: false)
   end
 end
