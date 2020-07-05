@@ -1,7 +1,4 @@
 class FeedbacksController < ApplicationController
-
-  skip_before_action :authenticate_user!
-
   def new
     @feedback = Feedback.new
   end
@@ -9,16 +6,11 @@ class FeedbacksController < ApplicationController
   def create
     @feedback = Feedback.new(feedback_params)
 
-    current_user.present? ? @feedback.email = current_user.email : @feedback_email = feedback_params[:email]
-
     if @feedback.valid?
-      FeedbacksMailer.send_feedback(@feedback).deliver_now
-
-      flash[:warning] = t('.success')
-
-      current_user.present? ? redirect_to(tests_path) : redirect_to(new_user_session_path)
-
+      FeedbacksMailer.send_feedback(feedback_params).deliver_now
+      redirect_to root_path, notice: t('.sent')
     else
+      flash[:alert] = "Something wen't wrong!Try again!"
       render :new
     end
   end
@@ -26,6 +18,6 @@ class FeedbacksController < ApplicationController
   private
 
   def feedback_params
-    params.require(:feedback).permit(:name, :email, :subject, :message)
+    params.require(:feedback).permit(:email, :feedback)
   end
 end
