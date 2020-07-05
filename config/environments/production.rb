@@ -61,16 +61,16 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "untitled_production"
 
-  config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = { host: 'testguru-mymadhead.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.sendgrid.net',
-    port: 25,
-    user_name: ENV['SMTP_USERNAME'],
-    password: ENV['SMTP_PASSWORD'],
-    authentication: 'plain',
-    enable_starttls_auto: true
+      address: 'smtp.sendgrid.com',
+      port: 587,
+      domain: 'sendgrid.com',
+      user_name: ENV['SMTP_USERNAME'],
+      password: ENV['SMTP_PASSWORD'],
+      authentication: 'login',
+      enable_starttls_auto: true
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
