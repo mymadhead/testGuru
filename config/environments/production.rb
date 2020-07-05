@@ -65,10 +65,10 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'testguru-mymadhead.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: 547,
-    user_name: ENV['_USERNAME'],
-    password: ENV['_PASSWORD'],
+    address: 'smtp.mailgun.org',
+    port: 587,
+    user_name: ENV['SMTP_USERNAME'],
+    password: ENV['SMTP_PASSWORD'],
     authentication: 'plain',
     enable_starttls_auto: true
   }
