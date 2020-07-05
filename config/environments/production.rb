@@ -63,10 +63,10 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = { host: 'testguru-mymadhead.herokuapp.com' }
-  config.action_mailer.delivery_method =
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: '',
-    port: ,
+    address: 'smtp.gmail.com',
+    port: 547,
     user_name: ENV['_USERNAME'],
     password: ENV['_PASSWORD'],
     authentication: 'plain',
