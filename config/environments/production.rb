@@ -63,7 +63,6 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'https://testguru-mymadhead.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
-  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
