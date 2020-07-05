@@ -4,6 +4,6 @@ class FeedbacksMailer < ApplicationMailer
     @email = params[:email]
     @feedback = params[:feedback]
 
-    mail to: 'mymadhead@yandex.ru', subject: truncate(@feedback, length: 15, escape: false)
+    mail to: 'mymadhead@gmail.com', subject: truncate(@feedback, length: 15, escape: false)
   end
 end
