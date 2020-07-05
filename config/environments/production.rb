@@ -62,13 +62,13 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "untitled_production"
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: 'testguru - mymadhead.herokuapp.com' }
-  config.action_mailer.delivery_method = :imap
+  config.action_mailer.default_url_options = { host: 'testguru-mymadhead.herokuapp.com' }
+  config.action_mailer.delivery_method =
   config.action_mailer.smtp_settings = {
-    address: 'imap.yandex.ru',
-    port: 143,
-    user_name: ENV['IMAP_USERNAME'],
-    password: ENV['IMAP_PASSWORD'],
+    address: '',
+    port: ,
+    user_name: ENV['_USERNAME'],
+    password: ENV['_PASSWORD'],
     authentication: 'plain',
     enable_starttls_auto: true
   }
