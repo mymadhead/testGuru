@@ -10,12 +10,12 @@ categories = Category.create!([{ name: :IT },
                              { name: :Games },
                              { name: :Music }])
 
-tests = Test.create!([{ title: 'Ruby', level: 1, category: categories[0], author: User.all[0] },
-                      { title: 'Ruby on Rails', level: 2, category: categories[0], author: User.all[0]},
-                      { title: 'Python', level: 3, category: categories[0], author: User.all[0] },
-                      { title: 'Corel draw', level: 1, category: categories[1], author: User.all[1] },
-                      { title: 'Painting', level: 2, category: categories[1], author: User.all[1] },
-                      { title: 'Workshop', level: 0, category: categories[2], author: User.all[2] }])
+tests = Test.create!([{ title: 'Ruby', level: 1, category: categories[0], author: User.find(1) },
+                      { title: 'Ruby on Rails', level: 2, category: categories[0], author: User.find(1)},
+                      { title: 'Python', level: 3, category: categories[0], author: User.find(1) },
+                      { title: 'Corel draw', level: 1, category: categories[1], author: User.find(1) },
+                      { title: 'Painting', level: 2, category: categories[1], author: User.find(1) },
+                      { title: 'Workshop', level: 0, category: categories[2], author: User.find(1) }])
 
 questions = Question.create!([{ body: 'Which of following is current version of Ruby?', test: tests[0] },
                               { body: 'How to create an block?', test: tests[0] },
