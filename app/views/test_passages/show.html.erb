@@ -6,12 +6,10 @@
 
 
   <div>
-    <%= content_tag :progress, 'progress',
-                    class: 'progress-bar progress',
-                    data: {
-                        value: @test_passage.current_question_number - 1,
-                        max: @test_passage.test.questions.size
-                    } %>
+    <%= content_tag :progress, 'Progress',
+                    class: 'progress-bar',
+                    data: { value: @test_passage.question_count,
+                            max: @test_passage.test.questions.count } %>
   </div>
 </div>
 
