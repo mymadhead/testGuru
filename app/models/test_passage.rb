@@ -1,49 +1,54 @@
+# frozen_string_literal: true
+
 class TestPassage < ApplicationRecord
+  PERCENT = 0.85
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_current_question
+  before_validation :before_validation_set_first_question, on: :create
 
-  def accept!(answer_ids)
-    if correct_answer?(answer_ids)
-      self.correct_questions += 1
-    end
-    save!
-  end
+  before_validation :before_validation_set_next_question, on: :update
 
   def completed?
     current_question.nil?
   end
 
-  def success_rate
-    ((correct_questions.to_f / test.questions.count) * 100).round
+  def accept!(answer_ids)
+    self.correct_questions += 1 if correct_answer?(answer_ids)
+
+    save!
   end
 
-  def successful?
-    success_rate >= 85
+  def passing_result?
+    self.correct_questions >= self.test.questions.size * PERCENT
   end
 
-  def question_count
-    test.questions.order(:id).where('id <= :current', current: current_question.id).count
+  def current_question_number
+    test.questions.where('id <= ?', current_question.id).count
   end
 
   private
 
-  def before_validation_set_current_question
+  def before_validation_set_first_question
+    self.current_question = test.questions.first if test.present?
+  end
+
+  def before_validation_set_next_question
     self.current_question = next_question
   end
 
-  def next_question
-    if current_question.nil?
-      test.questions.order(:id).first
+  def correct_answer?(answer_ids)
+    if answer_ids.nil?
+      false
     else
-      test.questions.order(:id).where('id > :current', current: current_question.id).first
+      correct_answers.ids.sort == answer_ids.map(&:to_i).sort
     end
   end
 
-  def correct_answer?(answer_ids)
-    correct_answers.ids.sort == Array(answer_ids).map(&:to_i).sort
+  def next_question
+    test.questions.order(:id).where('id > ?', current_question.id).first
   end
 
   def correct_answers

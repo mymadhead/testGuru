@@ -1,21 +1,38 @@
-<h1><%= t('.header', title: @test_passage.test.title) %></h1>
+<div class="shadow p-3 mb-5 bg-white rounded">
+  <h3>
+    <%= t('.header', title: @test_passage.test.title) %>
+  </h3>
 
-<p>
-  <b> <%= @test_passage.current_question.body %> </b>
-</p>
 
-<p> <%= t('.count', number: @test_passage.question_count, total: @test_passage.test.questions.count) %></p>
-<%= content_tag :progress, 'Progress',
-                class: 'progress-bar',
-                data: { value: @test_passage.question_count,
-                        max: @test_passage.test.questions.count } %>
-<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
-  <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
+
+  <div>
+    <%= content_tag :progress, 'progress',
+                    class: 'progress-bar progress',
+                    data: {
+                        value: @test_passage.current_question_number - 1,
+                        max: @test_passage.test.questions.size
+                    } %>
+  </div>
+</div>
+
+<ul class="list-group">
+  <li class="list-group-item disabled"
+      aria-disabled="true"><%= t('.question', total: (@test_passage.current_question_number)) %>
+  </li>
+  <li class="list-group-item"><%= @test_passage.current_question.body %></li>
+</ul>
+<a class="badge badge-success" <%= link_to t('.create_gist'), gist_test_passage_path(@test_passage), method: :post %></a>
+
+<div class="form-check mt-4">
+  <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+    <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
+      <p>
+        <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+        <%= b.label %>
+      </p>
+    <% end %>
     <p>
-      <%= b.check_box id: "answer_ids_#{self.object_id}" %>
-      <%= b.label %>
+      <%= form.submit t('.next'), class: 'btn btn-info'%>
     </p>
   <% end %>
-  <p> <%= link_to 'Add gists', gist_test_passage_path(@test_passage), method: :post %></p>
-  <%= form.submit t('.next') %>
-<% end %>
+</div>
