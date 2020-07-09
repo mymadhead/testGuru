@@ -140,6 +140,8 @@ en:
         add_answer: "Add answer"
         edit: "Edit"
         back: "Back to test"
+      update:
+        success: "Test successfully edited!"
     answers:
       answer:
         open: "Open"
@@ -158,6 +160,8 @@ en:
         correct: "Correct"
         edit: "Edit"
         back: "Back"
+      create:
+        success: "Answer successfully created!"
     gists:
       index:
         header: "All gists with saved questions"
@@ -167,6 +171,7 @@ en:
         back: "Back"
       gist:
         link: "Link"
+
 
   shared:
     errors:
