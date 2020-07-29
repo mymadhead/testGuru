@@ -25,7 +25,7 @@ class TestPassage < ApplicationRecord
   end
 
   def in_progress?
-    success.nil?
+    successful?.nil?
   end
 
   def completed?
