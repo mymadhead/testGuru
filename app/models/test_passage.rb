@@ -5,13 +5,27 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_current_question
+  before_validation :before_validation_set_current_question, if: :in_progress?
 
   def accept!(answer_ids)
-    if correct_answer?(answer_ids)
-      self.correct_questions += 1
+
+    if timer_finish <= Time.current
+      self.success = false
+      self.current_question = nil
+      save!
+    else
+      self.correct_questions += 1 if correct_answer?(answer_ids)
+      self.success = true if successful?
+      save!
     end
-    save!
+  end
+
+  def timer_finish
+    created_at + test.timer * 60
+  end
+
+  def in_progress?
+    success.nil?
   end
 
   def completed?
