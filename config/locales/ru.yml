@@ -45,7 +45,7 @@ ru:
       result: "Результат"
       successfull: "успех"
       unsuccessfull: "провал"
-      gist:
+    gist:
         success: "Гист был успешно сохранен!"
         fail: "Попытка сохранить гист провалилась!"
         view: "Просмотр"
@@ -110,6 +110,12 @@ ru:
         add_answer: "Добавить ответ"
         edit: "Редактировать"
         back: "Назад к тесту"
+      update:
+        success: "Вопрос успешно изменён"
+      create:
+          success: "Вопрос успешно создан"
+      destroy:
+          success: "Вопрос успешно удален"
     answers:
       answer:
         open: "Открыть"
@@ -128,6 +134,12 @@ ru:
         correct: "Правильно"
         edit: "Редактировать"
         back: "Назад к вопросу"
+      update:
+        success: "Ответ успешно изменён"
+      create:
+        success: "Ответ успешно создан"
+      destroy:
+        success: "Ответ успешно удален"
   gists:
       index:
         header: "Все вопросы сохраненные в гист"

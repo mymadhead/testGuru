@@ -140,6 +140,12 @@ en:
         add_answer: "Add answer"
         edit: "Edit"
         back: "Back to test"
+      update:
+        success: "Question successfully updated"
+      create:
+        success: "Question successfully created"
+      destroy:
+        success: "Question successfully deleted"
     answers:
       answer:
         open: "Open"
@@ -158,6 +164,12 @@ en:
         correct: "Correct"
         edit: "Edit"
         back: "Back"
+      update:
+        success: "Answer successfully updated"
+      create:
+        success: "Answer successfully created"
+      destroy:
+        success: "Answer successfully deleted"
     gists:
       index:
         header: "All gists with saved questions"

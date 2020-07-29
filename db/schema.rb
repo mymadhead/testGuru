@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_16_105630) do
+ActiveRecord::Schema.define(version: 2020_07_08_191105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
+    t.boolean "correct", default: false, null: false
     t.bigint "question_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "correct", default: false, null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
@@ -62,18 +62,22 @@ ActiveRecord::Schema.define(version: 2020_06_16_105630) do
   create_table "tests", force: :cascade do |t|
     t.string "title", null: false
     t.integer "level", default: 0
+    t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "author_id"
+    t.bigint "author_id", null: false
     t.index ["author_id"], name: "index_tests_on_author_id"
+    t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["title", "level"], name: "index_tests_on_title_and_level", unique: true
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email", default: "", null: false
+    t.string "type", default: "User", null: false
+    t.string "first_name"
+    t.string "last_name"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -87,11 +91,8 @@ ActiveRecord::Schema.define(version: 2020_06_16_105630) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.string "type", default: "User", null: false
-    t.string "first_name"
-    t.string "last_name"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-    t.index ["email"], name: "index_users_on_email"
+    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["type"], name: "index_users_on_type"
   end
@@ -102,5 +103,6 @@ ActiveRecord::Schema.define(version: 2020_06_16_105630) do
   add_foreign_key "test_passages", "questions", column: "current_question_id"
   add_foreign_key "test_passages", "tests"
   add_foreign_key "test_passages", "users"
+  add_foreign_key "tests", "categories"
   add_foreign_key "tests", "users", column: "author_id"
 end
