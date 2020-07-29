@@ -4,7 +4,7 @@ class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
-
+  scope :successful, -> { where(success: true) }
   before_validation :before_validation_set_current_question, if: :in_progress?
 
   def accept!(answer_ids)
@@ -24,10 +24,6 @@ class TestPassage < ApplicationRecord
     created_at + test.timer * 60
   end
 
-  def in_progress?
-    successful?.nil?
-  end
-
   def completed?
     current_question.nil?
   end
@@ -45,6 +41,10 @@ class TestPassage < ApplicationRecord
   end
 
   private
+
+  def in_progress?
+    success.nil?
+  end
 
   def before_validation_set_current_question
     self.current_question = next_question
