@@ -7,11 +7,10 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_current_question
 
-  def success; end
-
   def accept!(answer_ids)
-    self.correct_questions += 1 if correct_answer?(answer_ids) && !time_over?
-    success if successful?
+    self.correct_questions += 1 if correct_answer?(answer_ids)
+
+    self.success = true if successful?
     save!
   end
 

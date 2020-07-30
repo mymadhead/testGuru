@@ -1,23 +1,29 @@
-document.addEventListener('turbolinks:load', function () {
-    var passwordConfirmation = document.querySelector('#user_password_confirmation')
+document.addEventListener('turbolinks:load', function() {
+    const control1 = document.getElementById('password-control')
+    const control2 = document.getElementById('confirmation-control')
 
-    if (passwordConfirmation) {
-        passwordConfirmation.addEventListener('input', comparePasswords)
+    if (control1 && control2) {
+        control1.addEventListener('input', showIcons)
+        control2.addEventListener('input', showIcons)
     }
 })
 
-function comparePasswords() {
-    var pass = document.querySelector('#user_password')
+function showIcons() {
+    const password = document.getElementById('password-control')
+    const passwordConfirmation = document.getElementById('confirmation-control')
 
-
-    if (this.value === pass.value) {
-        this.parentElement.querySelector('.octicon-check').classList.remove('hide')
-        this.parentElement.querySelector('.octicon-x').classList.add('hide')
-    } else if (!this.value) {
-        this.parentElement.querySelector('.octicon-x').classList.add('hide')
-        this.parentElement.querySelector('.octicon-check').classList.add('hide')
+    if (password.value === '' || passwordConfirmation.value === '') {
+        document.querySelector('.octicon-check').classList.add('hide')
+        document.querySelector('.octicon-circle-slash').classList.add('hide')
+        passwordConfirmation.classList.remove('focus-success', 'focus-warning')
+    } else if (password.value === passwordConfirmation.value) {
+        document.querySelector('.octicon-check').classList.remove('hide')
+        document.querySelector('.octicon-circle-slash').classList.add('hide')
+        passwordConfirmation.classList.add('focus-success')
     } else {
-        this.parentElement.querySelector('.octicon-x').classList.remove('hide')
-        this.parentElement.querySelector('.octicon-check').classList.add('hide')
+        document.querySelector('.octicon-check').classList.add('hide')
+        document.querySelector('.octicon-circle-slash').classList.remove('hide')
+        passwordConfirmation.classList.remove('focus-success')
+        passwordConfirmation.classList.add('focus-warning')
     }
 }
