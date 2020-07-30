@@ -11,8 +11,8 @@ class User < ApplicationRecord
          :registerable,
          :recoverable,
          :rememberable,
+         #:confirmable,
          :trackable,
-         :confirmable,
          :validatable
 
   def list_all_tests(level)

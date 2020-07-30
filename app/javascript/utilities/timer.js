@@ -1,18 +1,23 @@
-document.addEventListener('turbolinks:load', function () {
-    let control = document.querySelector('.timer')
-
-    if (control) {
-        let countDownDate = new Date(control.dataset.timerFinish)
-        let x = setInterval(function () {
-            let now = new Date().getTime()
-            let distance = countDownDate - now
-            let minutes = Math.floor(distance / (1000 * 60))
-            let seconds = Math.floor(distance % (1000 * 60) / 1000)
-            control.innerHTML = minutes + "m " + seconds + "s"
-
-            if (distance < 0) {
-                document.querySelector("form").submit()
-            }
-        }, 1000)
+document.addEventListener('turbolinks:load', function(){
+    const timerData = document.querySelector('#timer')
+    if (timerData) {
+        startTimer(timerData)
     }
 })
+
+function startTimer(timerData) {
+    let timer = Math.round(timerData.dataset.timeLeft);
+    setTimeout(function updateTimer() {
+        if (timer > 0) {
+            setTimer(timer--)
+            setTimeout(updateTimer, 1000)
+        } else {
+            window.location.href = window.location.href + '/result'
+        }
+    }, 0)
+}
+
+function setTimer(timer) {
+    const counterSpan = document.querySelector('#counter');
+    counterSpan.innerText = ': ' + timer
+}

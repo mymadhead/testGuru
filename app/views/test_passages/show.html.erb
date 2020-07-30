@@ -1,12 +1,9 @@
-<h1><%= t('.header', title: @test_passage.test.title) %></h1>
-<%= content_tag :p,
-                '',
-                class: 'timer',
-                data: { timer_finish: @test_passage.timer_finish.to_s } if @test_passage.test.timer %>
-<p>
-  <b> <%= @test_passage.current_question.body %> </b>
-</p>
-
+<h4><%= t('.header', title: @test_passage.test.title) %></h4>
+<% if @test_passage.timer? %>
+  <p><%= t('.timer-remaining') %>: <%= content_tag :p, @test_passage.time_left, id: 'timer',
+                                       data: { timer: @test_passage.timer, time_left: @test_passage.time_over? }%> </p>
+<% end %>
+  <h2> <%= @test_passage.current_question.body %> </h2>
 <p> <%= t('.count', number: @test_passage.question_count, total: @test_passage.test.questions.count) %></p>
 <%= content_tag :progress, 'Progress',
                 class: 'progress-bar',
