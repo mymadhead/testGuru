@@ -1,7 +1,7 @@
 <h4><%= t('.header', title: @test_passage.test.title) %></h4>
 <% if @test_passage.timer? %>
   <p><%= t('.timer-remaining') %>: <%= content_tag :p, @test_passage.time_left, id: 'timer',
-                                       data: { timer: @test_passage.timer, time_left: @test_passage.time_over? }%> </p>
+                                       data: { timer: @test_passage.timer, time_left: @test_passage.time_left }%> </p>
 <% end %>
   <h2> <%= @test_passage.current_question.body %> </h2>
 <p> <%= t('.count', number: @test_passage.question_count, total: @test_passage.test.questions.count) %></p>
