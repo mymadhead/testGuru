@@ -68,7 +68,7 @@ en:
       header: "Passing the %{title} test"
       count: "Question %{number} of %{total}"
       next: "Next question"
-      timer-remaining: "Time left(sec.)"
+      timer-remaining: "Time left(sec.): "
     result:
       header: "Test %{title} passed"
       back: "Back"

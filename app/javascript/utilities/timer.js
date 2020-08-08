@@ -6,7 +6,8 @@ document.addEventListener('turbolinks:load', function(){
 })
 
 function startTimer(timerData) {
-    let timer = Math.round(timerData.dataset.timeLeft);
+    const {timeLeft} = timerData.dataset;
+    let timer = Math.round(timeLeft);
     setTimeout(function updateTimer() {
         if (timer > 0) {
             setTimer(timer--)
