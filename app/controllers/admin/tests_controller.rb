@@ -31,7 +31,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to admin_test_path(@test)
+      redirect_to [:admin, @test]
     else
       render :edit
     end
@@ -61,6 +61,6 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_params
-    params.require(:test).permit(:level, :title, :category_id, :time)
+    params.require(:test).permit(:level, :title, :category_id)
   end
 end
