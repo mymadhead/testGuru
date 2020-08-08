@@ -17,5 +17,10 @@
     <%= form.collection_select :category_id, Category.all, :id, :name, prompt: t('.select') %>
   </p>
 
+  <p>
+    <%= form.label :time %>
+    <%= form.number_field :time %>
+  </p>
+
   <p><%= form.submit %></p>
 <% end %>

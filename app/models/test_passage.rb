@@ -8,9 +8,9 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_current_question
 
   def accept!(answer_ids)
-    if correct_answer?(answer_ids)
-      self.correct_questions += 1
-    end
+    self.correct_questions += 1 if correct_answer?(answer_ids)
+
+    successful?
     save!
   end
 
@@ -19,7 +19,7 @@ class TestPassage < ApplicationRecord
   end
 
   def success_rate
-    ((correct_questions.to_f / test.questions.count) * 100).round
+    ((correct_questions.to_f / test.questions.count) * 100).round.to_i
   end
 
   def successful?
@@ -28,6 +28,22 @@ class TestPassage < ApplicationRecord
 
   def question_count
     test.questions.order(:id).where('id <= :current', current: current_question.id).count
+  end
+
+  def timer?
+    test.time.present?
+  end
+
+  def timer
+    test.time * 60
+  end
+
+  def time_left
+    (created_at + timer - Time.current).to_i
+  end
+
+  def time_over?
+    timer? && time_left <= 0
   end
 
   private

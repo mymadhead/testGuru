@@ -8,3 +8,17 @@
 .unsuccessfull {
   color: red;
 }
+
+.title {
+  text-align: center;
+}
+
+table.tests-table {
+  width: 800px;
+  text-align: center;
+  margin-top: 2rem;
+}
+tr th {
+  background-color: rgba(60, 179, 113, 0.62);
+  color: #373b3e;
+}

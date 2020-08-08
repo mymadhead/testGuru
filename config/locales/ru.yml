@@ -38,6 +38,7 @@ ru:
       header: "Прохождение теста %{title}"
       count: "Вопрос %{number} из %{total}"
       next: "Следующий вопрос"
+      timer-remaining: "Осталось(сек.)"
     result:
       header: "Тест %{title} пройден"
       back: "Назад"

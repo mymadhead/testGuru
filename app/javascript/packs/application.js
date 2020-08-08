@@ -18,6 +18,7 @@ require("bootstrap")
 require("utilities/sorting")
 require("utilities/form_inline")
 require("utilities/progress_bar")
+require("utilities/timer")
 require("registration/password_confirmation")
 
 
