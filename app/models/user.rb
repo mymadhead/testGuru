@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :successful_test_passages, -> { where(success: true) }, class_name: 'TestPassage'
   has_many :tests, through: :test_passages
 
+
   devise :database_authenticatable,
          :registerable,
          :recoverable,
