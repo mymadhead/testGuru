@@ -141,7 +141,7 @@ ru:
         success: "Ответ успешно создан"
       destroy:
         success: "Ответ успешно удален"
-  gists:
+    gists:
       index:
         header: "Все вопросы сохраненные в гист"
         question: "Вопрос"
@@ -150,7 +150,15 @@ ru:
         back: "Назад"
       gist:
         link: "Перейти"
-
+    badges:
+      new:
+        header: "Создать новое Достижение"
+      index:
+        header: "Система Достижений"
+        badge_create: "Добавить достижение"
+        name: "Название"
+        url: "Картинка"
+        actions: "Действия"
 
   shared:
     errors:

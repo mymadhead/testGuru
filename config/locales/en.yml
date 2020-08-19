@@ -180,6 +180,15 @@ en:
         back: "Back"
       gist:
         link: "Link"
+    badges:
+      new:
+        header: "Create a new Badge"
+      index:
+        header: "Badges"
+        badge_create: "Create a badge"
+        name: "Title"
+        url: "Picture"
+        actions: "Actions"
 
   shared:
     errors:
