@@ -1,0 +1,18 @@
+<h1> <%= t('.header-all') %></h1>
+
+<% @badges.each do |badge| %>
+    <%= image_tag(badge.url, class: 'badge-size mr-2') %>
+    <%= content_tag :span, badge.name %>
+<% end %>
+
+
+<h1><%= t('.header') %></h1>
+
+<tr>
+<th> <%= t('.name') %> </th>
+<th> <%= t('.url') %> </th>
+</tr>
+
+<%= render partial: 'badges_user', collection: @badges_users %>
+
+<%= link_to t('links.back'), tests_path, class: 'btn btn-info' %>

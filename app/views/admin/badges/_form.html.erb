@@ -1,0 +1,35 @@
+<%= form_for [:admin, @badge] do |f| %>
+  <div class="row m-3">
+    <div class="col-12 mt-3">
+      <p><%= f.label :name, class: 'col-form-label'%> </p>
+    </div>
+
+    <div class="col-12">
+      <p><%= f.text_field :name, class: 'form-control' %> </p>
+    </div>
+
+    <div class="col-12 mt-3">
+      <%= f.label :url, class: 'col-form-label' %><br>
+      <%= f.select :url, ApplicationHelper::BADGES_URLS, {}, { class: 'form-control' } %>
+    </div>
+
+    <div class="col-12 mt-3">
+      <%= f.label :rule_value, class: 'col-form-label' %>
+    </div>
+
+    <div class="col-12 mt-3">
+      <%= f.text_field :rule_value, class: 'form-control' %>
+    </div>
+
+    <div class="col-12 mt-3">
+      <%= f.label :rule_name, class: 'col-form-label' %>
+    </div>
+
+    <div class="col-12 mt-3">
+      <%= f.select :rule_name, t("badge.rule_name.").invert, {}, { class: 'form-control' } %>
+    </div>
+  </div>
+  <p>
+    <%= f.submit t('.submit'), class: "btn btn-primary mt-3" %>
+  </p>
+<%end %>

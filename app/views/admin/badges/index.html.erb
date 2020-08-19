@@ -1,0 +1,16 @@
+<h1> <%= t('.header') %></h1>
+
+<%= render 'shared/errors', resource: @badge %>
+
+<tr>
+<th> <%= t('.name') %> </th>
+  <th> <%= t('.url') %> </th>
+  <th> <%= t('.rule_name') %> </th>
+  <th> <%= t('.rule_value') %> </th>
+  <th> <%= t('.actions') %> </th>
+</tr>
+
+<%= render @badges %>
+
+<%= link_to t('.badge_create'), new_admin_badge_path, class: 'btn btn-info mr-3' %>
+<%= link_to t('links.back'), admin_tests_path, class: 'btn btn-info' %>
