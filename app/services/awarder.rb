@@ -22,9 +22,9 @@ class Awarder
 
     last_award_date = user_badge_awards('level', level).order(created_at: :desc).first&.created_at
 
-    user_level_tests = if last_award_date.present?
+    user_level_tests = if last_award_date
                          user_successful_tests.where(level: level)
-                                              .merge(TestPassage.where("test_passages.created_at > ?", last_award_date))
+                                              .merge(TestPassage.where("test_passages.created_at" > :date, date: last_award_date))
                        else
                          user_successful_tests.where(level: level)
                        end
@@ -39,7 +39,7 @@ class Awarder
 
     user_level_tests = if last_award_date.present?
                          user_successful_tests.where(category_id: @test.category.id)
-                                              .merge(TestPassage.where("test_passages.created_at > ?", last_award_date))
+                                              .merge(TestPassage.where("test_passages.created_at" > :date, date: last_award_date))
                        else
                          user_successful_tests.where(category_id: @test.category.id)
                        end
@@ -61,7 +61,7 @@ class Awarder
     @user.tests.merge(TestPassage.where(success: true))
   end
 
-  def user_badge_awards(rule_name, rule_value)
-    @user.badges_users.where(badge: Badge.where(rule_name: rule_name, rule_value: rule_value))
+  def user_badge_awards(badge)
+    @user.badges_users.where(badge: badge)
   end
 end
