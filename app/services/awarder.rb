@@ -22,7 +22,7 @@ class Awarder
 
     last_award_date = user_badge_awards('level', level).order(created_at: :desc).first&.created_at
 
-    user_level_tests = if last_award_date
+    user_level_tests = if last_award_date.present?
                          user_successful_tests.where(level: level)
                                               .merge(TestPassage.where("test_passages.created_at" > :date, date: last_award_date))
                        else
