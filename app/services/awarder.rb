@@ -1,4 +1,6 @@
 class Awarder
+  RULES = %w[first_try level category loser].freeze
+
   def initialize(test_passage)
     @test_passage = test_passage
     @user = @test_passage.user

@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :successful_test_passages, -> { where(success: true) }, class_name: 'TestPassage'
   has_many :tests, through: :test_passages
-  has_many :badges_users, dependent: :delete_all
+  has_many :badges_users, dependent: :destroy
   has_many :badges, through: :badges_users
 
   devise :database_authenticatable,

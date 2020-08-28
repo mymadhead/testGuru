@@ -4,14 +4,19 @@ class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
-
+  scope :successful, -> { where(success: true) }
   before_validation :before_validation_set_current_question
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if correct_answer?(answer_ids)
-
-    self.success = true if successful?
-    save!
+    if time_over? <=> Time.current
+      self.success = false
+      self.current_question = nil
+      save!
+    else
+      self.correct_questions += 1 if correct_answer?(answer_ids)
+      self.success = true if successful?
+      save!
+    end
   end
 
   def completed?
