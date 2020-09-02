@@ -5,7 +5,14 @@ class TestPassagesController < ApplicationController
 
   def show; end
 
-  def result; end
+  def result
+    if @test_passage.completed?
+      awarded_badges = Awarder.new(@test_passage).call
+      current_user.badges << awarded_badges
+    else
+      render :show
+    end
+  end
 
   def update
     @test_passage.accept!(params[:answer_ids])

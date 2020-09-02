@@ -2,8 +2,6 @@
 
 <% if @test_passage[:badges].any? %>
   <h4> Вы получили награды: </h4>
- <% awarded_badges = Awarder.new(@test_passage).call %>
-  <% current_user.badges << awarded_badges %>
 <%= session[:badges].each do |badge_details|  %>
 <%= image_tag(badge_details[1], class: 'badge-size mr-1')%>
 <%= badge_details[0] %>
