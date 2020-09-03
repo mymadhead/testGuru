@@ -37,7 +37,7 @@ class Awarder
   def category(category)
     return unless @test_passage.successful? && category == @test.category.name
 
-    last_award_date = user_badge_awards('category', category).order(created_at: :desc).first&.created_at
+    last_award_date = user_badge_awards('category').order(created_at: :desc).first&.created_at
 
     user_level_tests = if last_award_date.present?
                          user_successful_tests.where(category_id: @test.category.id)

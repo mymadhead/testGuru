@@ -189,7 +189,12 @@ en:
         name: "Title"
         url: "Picture"
         actions: "Actions"
-
+    badge:
+      rule_name:
+        first_try: "From the first try"
+        category: "All tests from the selected category"
+        level: "All tests of the selected level"
+        loser: "Failed all the tests"
   shared:
     errors:
       header:
@@ -210,12 +215,7 @@ en:
       submit: "Send"
     create:
       sent: "Your feedback was sent"
-  badge:
-    rule_name:
-      first_try: "From the first try"
-      category: "All tests from the selected category"
-      level: "All tests of the selected level"
-      loser: "Failed all the tests"
+
   badges_users:
     index:
       header: "My rewards"
