@@ -22,7 +22,7 @@ class Awarder
   def level(level)
     return unless @test_passage.successful? && level == @test.level.to_s
 
-    last_award_date = user_badge_awards('level', level).order(created_at: :desc).first&.created_at
+    last_award_date = user_badge_awards('level').order(created_at: :desc).first&.created_at
 
     user_level_tests = if last_award_date.present?
                          user_successful_tests.where(level: level)
@@ -64,6 +64,6 @@ class Awarder
   end
 
   def user_badge_awards(badge)
-    @user.badges_users.where(badge: badge)
+    @user.badges_users.where(badge: Badge.where(badge: badge))
   end
 end
