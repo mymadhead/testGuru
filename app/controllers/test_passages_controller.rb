@@ -6,12 +6,8 @@ class TestPassagesController < ApplicationController
   def show; end
 
   def result
-    if @test_passage.completed?
-      awarded_badges = Awarder.new(@test_passage).call
-      current_user.badges << awarded_badges
-    else
-      render :show
-    end
+    awarded_badges = Awarder.new(@test_passage).call
+    current_user.badges << awarded_badges
   end
 
   def update
