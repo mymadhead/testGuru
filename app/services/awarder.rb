@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Awarder
   RULES = %w[first_try level category loser].freeze
 
@@ -26,7 +28,7 @@ class Awarder
 
     user_level_tests = if last_award_date.present?
                          user_successful_tests.where(level: level)
-                                              .merge(TestPassage.where("test_passages.created_at" > :date, date: last_award_date))
+                                              .merge(TestPassage.where('test_passages.created_at' > :date, date: last_award_date))
                        else
                          user_successful_tests.where(level: level)
                        end
@@ -41,7 +43,7 @@ class Awarder
 
     user_level_tests = if last_award_date.present?
                          user_successful_tests.where(category_id: @test.category.id)
-                                              .merge(TestPassage.where("test_passages.created_at" > :date, date: last_award_date))
+                                              .merge(TestPassage.where('test_passages.created_at' > :date, date: last_award_date))
                        else
                          user_successful_tests.where(category_id: @test.category.id)
                        end
