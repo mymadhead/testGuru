@@ -5,19 +5,21 @@ class TestPassagesController < ApplicationController
 
   def show; end
 
-  def result
-    awarded_badges = Awarder.new(@test_passage).call
-    current_user.badges << awarded_badges
-  end
+  def result; end
 
   def update
     @test_passage.accept!(params[:answer_ids])
 
-    if @test_passage.completed? || @test_passage.time_over?
+    if @test_passage.completed?
+      awarded_badges = Awarder.new(@test_passage).call
+      current_user.badges << awarded_badges
+
+      session[:badges] = awarded_badges&.pluck(:name, :url)
+
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else
-      render :show
+      render 'show'
     end
   end
 
@@ -30,7 +32,6 @@ class TestPassagesController < ApplicationController
     else
       flash[:alert] = t('.fail')
     end
-
     redirect_to @test_passage
   end
 

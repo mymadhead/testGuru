@@ -1,6 +1,6 @@
 <h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
-<% if @test_passage[:badges] %>
+<% if session[:badges].any? %>
   <h4> Вы получили награды: </h4>
 <%= session[:badges].each do |badge_details|  %>
 <%= image_tag(badge_details[1], class: 'badge-size mr-1')%>
