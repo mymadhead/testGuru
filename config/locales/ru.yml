@@ -159,6 +159,8 @@ ru:
         name: "Название"
         url: "Картинка"
         actions: "Действия"
+        rule_name: "Условие 1"
+        rule_value: "Условие 2"
     badge:
       rule_name:
         first_try: "Прохождение с первой попытки"

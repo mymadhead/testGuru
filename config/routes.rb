@@ -7,7 +7,7 @@ Rails.application.routes.draw do
                      path_names: { sign_in: :login, sign_out: :logout },
                      controllers: { sessions: 'users/sessions' }
 
-  default_url_options host: 'testguru-mymadhead.herokuapp.com'
+  default_url_options host: 'testguru-mymadhead.herokuapp.com/'
 
   resources :tests, only: :index do
     post :start, on: :member

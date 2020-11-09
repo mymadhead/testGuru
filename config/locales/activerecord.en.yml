@@ -32,3 +32,12 @@ en:
       messages:
         blank: "Can't be empty"
   file_name: ""
+  admin:
+    badges:
+      form:
+        submit: "Send"
+  links:
+    message: "Create achievment"
+    delete: "Delete"
+    edit: "Edit"
+    back: "Back"

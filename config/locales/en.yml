@@ -189,6 +189,8 @@ en:
         name: "Title"
         url: "Picture"
         actions: "Actions"
+        rule_name: "Rule 1"
+        rule_value: "Rule 2"
     badge:
       rule_name:
         first_try: "From the first try"

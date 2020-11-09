@@ -30,3 +30,12 @@ ru:
     errors:
       messages:
         blank: "не может быть пустым"
+  admin:
+    badges:
+      form:
+        submit: "Отправить"
+  links:
+    message: "Создать достижение"
+    delete: "Удалить"
+    edit: "Изменить"
+    back: "Назад"
