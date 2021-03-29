@@ -1,0 +1,10 @@
+
+<tr>
+<td class="align-middle"> <%= content_tag :span, badge.name, class: 'test-title'%> </td>
+<td class="align-middle"> <%= image_tag(badge.url, class: 'badge-size') %></td>
+<td class="align-middle"> <%= badge.rule_name %> </td>
+<td class="align-middle"> <%= badge.rule_value %> </td>
+<td class="align-middle"> <%= link_to t('links.edit'), edit_admin_badge_path(badge) %></td>
+<td class="align-middle">  <%= link_to t('links.delete'), admin_badge_path(badge),
+                                       data: {:confirm => t('links.message')}, method: :delete %> </td>
+</tr>

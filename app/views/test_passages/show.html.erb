@@ -1,7 +1,7 @@
 <h4><%= t('.header', title: @test_passage.test.title) %></h4>
 
 <% if @test_passage.timer? %>
-  <% content_tag :span, id: 'timer', class: 'mb-2',
+  <% content_tag :p, id: 'timer', class: 'mb-2',
                   data: {timer: @test_passage.timer, time_left: @test_passage.time_left}  %>
     <%= t('.timer-remaining') %>
     <%= @test_passage.time_left %>

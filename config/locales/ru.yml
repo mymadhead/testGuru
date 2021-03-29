@@ -141,7 +141,7 @@ ru:
         success: "Ответ успешно создан"
       destroy:
         success: "Ответ успешно удален"
-  gists:
+    gists:
       index:
         header: "Все вопросы сохраненные в гист"
         question: "Вопрос"
@@ -150,7 +150,23 @@ ru:
         back: "Назад"
       gist:
         link: "Перейти"
-
+    badges:
+      new:
+        header: "Создать новое Достижение"
+      index:
+        header: "Система Достижений"
+        badge_create: "Добавить достижение"
+        name: "Название"
+        url: "Картинка"
+        actions: "Действия"
+        rule_name: "Условие 1"
+        rule_value: "Условие 2"
+    badge:
+      rule_name:
+        first_try: "Прохождение с первой попытки"
+        category: "Пройдены все тесты заданной категории"
+        level: "Пройдены все тесты заданного уровня"
+        loser: "Провалены все тесты"
 
   shared:
     errors:
@@ -167,9 +183,18 @@ ru:
 
   feedbacks:
     new:
-      header: "Мы будем счастливы узнать, что вы думаете о нас!"
+      header: "Мы будем рады узнать, что вы думаете о нас!"
       email: "Адрес:"
       feedback: "Отзыв:"
       submit: "Отправить"
     create:
       sent: "Ваш отзыв был отправлен."
+
+  badges_users:
+    index:
+      header: "Мои достижения"
+      name: "Название"
+      url: "Значок"
+      rule_name: "Условия получения"
+      rule_value: "Значение"
+      header-all: "Все достижения"
